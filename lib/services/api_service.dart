@@ -3,6 +3,7 @@ import 'package:pharmacy_app/feature/models/cities_model.dart';
 import 'package:pharmacy_app/feature/models/districts_model.dart';
 import 'package:pharmacy_app/feature/models/pharmacy_model.dart';
 import 'package:pharmacy_app/utility/extensions/api_extension.dart';
+import 'package:pharmacy_app/utility/functions.dart';
 
 abstract class IApiService {
   Future<PharmacyModel?> getDutyPharmacyForCityForDistrict(
@@ -45,11 +46,12 @@ class ApiService implements IApiService {
         }
         print(response.data);
       } else {
-        print('Hata Kodu: ${response.statusCode}');
-        print('Hata Mesajı: ${response.statusMessage}');
+        showErrorToastAndExit(
+            'Bir sorun oluştu!\nLütfen daha sonra tekrar deneyin..');
       }
     } catch (e) {
-      print('Hata: $e');
+      showErrorToastAndExit(
+          'Bir sorun oluştu!\nLütfen daha sonra tekrar deneyin..');
     }
     return null;
   }
@@ -71,11 +73,12 @@ class ApiService implements IApiService {
         }
         print(response.data);
       } else {
-        print('Hata Kodu: ${response.statusCode}');
-        print('Hata Mesajı: ${response.statusMessage}');
+        showErrorToastAndExit(
+            'Bir sorun oluştu!\nLütfen daha sonra tekrar deneyin..');
       }
     } catch (e) {
-      print('Hata: $e');
+      showErrorToastAndExit(
+          'Bir sorun oluştu!\nLütfen daha sonra tekrar deneyin..');
     }
     return null;
   }
@@ -102,11 +105,12 @@ class ApiService implements IApiService {
         }
         print(response.data);
       } else {
-        print('Hata Kodu: ${response.statusCode}');
-        print('Hata Mesajı: ${response.statusMessage}');
+        showErrorToastAndExit(
+            'Bir sorun oluştu!\nLütfen daha sonra tekrar deneyin..');
       }
     } catch (e) {
-      print('Hata: $e');
+      showErrorToastAndExit(
+          'Bir sorun oluştu!\nLütfen daha sonra tekrar deneyin..');
     }
     return null;
   }

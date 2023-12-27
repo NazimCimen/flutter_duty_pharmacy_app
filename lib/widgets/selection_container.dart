@@ -8,7 +8,6 @@ import 'package:pharmacy_app/utility/functions.dart';
 class SelectionCityOrDistrict extends StatefulWidget {
   List placeList;
   int cityOrDistrict;
-  // TextEditingController place;
   SelectionCityOrDistrict(
       {super.key, required this.placeList, required this.cityOrDistrict});
 
@@ -24,8 +23,6 @@ class _SelectionCityOrDistrictState extends State<SelectionCityOrDistrict> {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.transparent,
-     // height: context.dynamicHeight(0.2),
-    //  width: context.dynamicWidht(0.8),
       child: Row(
         children: [
           widget.cityOrDistrict == 1 && popUpCity.text == ''

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pharmacy_app/utility/constants.dart';
 import 'package:pharmacy_app/utility/extensions/provider_extensions.dart';
 import 'package:pharmacy_app/utility/extensions/size_extensions.dart';
 import 'package:pharmacy_app/utility/functions.dart';
@@ -10,6 +11,7 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //eğer liste doluysa ekranda eczaneleri listeler boş ise kullanıcıya uyarı verir
     return context.watchHomeDataLength() > 0
         ? Center(
             child: SizedBox(
@@ -27,7 +29,7 @@ class HomeView extends StatelessWidget {
                         )),
                   ),
                   separatorBuilder: (BuildContext context, int index) {
-                    return Divider(color: Colors.black);
+                    return const Divider(color: Colors.black);
                   },
                 )),
           )
@@ -36,10 +38,11 @@ class HomeView extends StatelessWidget {
             width: context.dynamicWidht(0.9),
             child: Padding(
                 padding: context.paddingMedium,
-                child: buildTextNoPharmacy(context)));
+                child:
+                    buildTextNoPharmacyOrConnection(context, noPharmacyTxt)));
   }
 
-
+  ///liste içinde gösterilen eczaneye ait bilgileri içerir
   Column buildColumnPharmacy(BuildContext context, int index) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -63,6 +66,7 @@ class HomeView extends StatelessWidget {
     );
   }
 
+  ///ecanenin ismini return eder
   Text buildTextPharmacyName(BuildContext context, int index) {
     return Text(
       '${context.watchPharmacyName(index)}',
@@ -74,6 +78,7 @@ class HomeView extends StatelessWidget {
     );
   }
 
+  ///eczanenin telefon bilgilerini return eder
   Row buildRowPharmacyPhone(BuildContext context, int index) {
     return Row(
       children: [
@@ -93,6 +98,7 @@ class HomeView extends StatelessWidget {
     );
   }
 
+  ///eczanenin adres bilgilerini return eder
   Text buildAdressTextForDetails(BuildContext context, int index) {
     return Text(context.watchPharmacyAdress(index),
         maxLines: 2,

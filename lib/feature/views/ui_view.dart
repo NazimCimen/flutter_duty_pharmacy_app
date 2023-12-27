@@ -10,6 +10,7 @@ class Ui extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<dynamic> cities = box.read(boxKeyValueOfCitiesList);
     return DefaultTabController(
       length: 3,
       child: Scaffold(
@@ -17,15 +18,14 @@ class Ui extends StatelessWidget {
           centerTitle: true,
           title: FittedBox(child: Text(titleStringTxt)),
         ),
-        bottomNavigationBar:MyCustomBottomAppBar(),
+        bottomNavigationBar: MyCustomBottomAppBar(),
         body: TabBarView(
             physics: const NeverScrollableScrollPhysics(),
             children: [
               const HomeView(),
               MapScreenView(),
               FilterLocationsView(
-//okuma işlemini burada yapma
-                cities: box.read(boxKeyValueOfCitiesList),
+                cities: cities,
               ),
             ]),
       ),

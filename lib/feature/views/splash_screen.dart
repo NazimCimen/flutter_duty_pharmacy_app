@@ -18,6 +18,8 @@ class _SplashScreenState extends State<SplashScreen> {
   late ApiService _service;
   late CitiesModel? _citiesModel;
 
+///local veritabanını kontrol eder eğer önceden şehir listesi kaydedilmiş ise localden listeyi çeker ve anasayfaya geç methodunu çağırır.
+///localde liste yok ise api ye istek atar verileri çeker locale kaydeder ve ansayfaya geç meyhodunu çağırır
   Future<void> getCities() async {
     late final List<dynamic> cities;
     if (box.read(boxKeyValueOfCitiesList) == null) {
@@ -30,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
       anasayfayagec(cities);
     }
   }
-
+///2 saniye bekler verileri FilterLocationsView 'a parametre olarak verip o sayfaya geçiş yapar
   void anasayfayagec(List<dynamic> cities) async {
     await Future.delayed(const Duration(seconds: 2));
     context.pushReplacementFilterLocationsView(cities);
@@ -71,10 +73,11 @@ class _SplashScreenState extends State<SplashScreen> {
     );
   }
 
+///ekranda uygulama logosunu gösterir
   Image buildImage() {
     return Image.asset(logoAssetPath);
   }
-
+///loading mesajı oluşturur
   Row buildRowLoading(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,

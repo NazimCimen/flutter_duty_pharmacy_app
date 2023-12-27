@@ -8,16 +8,15 @@ import 'package:pharmacy_app/themes/light_theme.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
-  await initializeApp(); 
+  await initializeApp();
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(create: (context) => StateController()),
-      ChangeNotifierProvider(create: (context) => MapController())
+      ChangeNotifierProvider(create: (context) => MapController()),
     ],
     child: const MyApp(),
   ));
 }
-
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

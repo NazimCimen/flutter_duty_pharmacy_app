@@ -12,6 +12,8 @@ String telTxt = 'tel';
 String noPharmacyTxt = 'Seçtiğiniz bölgede bir nöbetçi eczane bulunmamaktadır.';
 String chooseCityTxt = 'Bir Şehir Seçin';
 String chooseDistrictTxt = 'Bir İlçe Seçin';
+String connectionError =
+    'Bağlantı sorunu.İnternet bağlantınızı kontrol edin ve Uygulamayı yeniden başlatın';
 
 ///ASSET PATHS
 String imageAssetPath = 'assets/images/pharmacyLocation.png';
@@ -52,5 +54,3 @@ List<BoxShadow> boxShadowDetailsPageContainer = [
     spreadRadius: 0,
   ),
 ];
-
-///

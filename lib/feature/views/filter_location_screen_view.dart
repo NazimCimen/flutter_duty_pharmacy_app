@@ -9,20 +9,9 @@ import 'package:pharmacy_app/widgets/selection_container.dart';
 import 'package:pharmacy_app/widgets/custom_elevated_button.dart';
 import 'package:provider/provider.dart';
 
-class FilterLocationsView extends StatefulWidget {
+class FilterLocationsView extends StatelessWidget {
   final List<dynamic> cities;
   const FilterLocationsView({super.key, required this.cities});
-
-  @override
-  State<FilterLocationsView> createState() => _FilterLocationsViewState();
-}
-
-class _FilterLocationsViewState extends State<FilterLocationsView> {
-  @override
-  void initState() {
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,6 +20,7 @@ class _FilterLocationsViewState extends State<FilterLocationsView> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              //kullanıcıya şehir ve ilçe seçmesi için mesaj
               SizedBox(
                   height: context.dynamicHeight(0.1),
                   width: context.dynamicWidht(0.9),
@@ -40,15 +30,17 @@ class _FilterLocationsViewState extends State<FilterLocationsView> {
                           style: context.customTitleLargeTextStyle.copyWith(fontSize: context.dynamicWidht(0.08))),
                     ),
                   )),
+                 //şehir seçimi 
               SizedBox(
                   height: context.dynamicHeight(0.1),
                   width: context.dynamicWidht(0.8),
                   child: FittedBox(
                     child: SelectionCityOrDistrict(
-                      placeList: widget.cities,
+                      placeList: cities,
                       cityOrDistrict: 1,
                     ),
                   )),
+                  //ilçe seçimi
               SizedBox(
                   height: context.dynamicHeight(0.1),
                   width: context.dynamicWidht(0.8),
@@ -59,6 +51,7 @@ class _FilterLocationsViewState extends State<FilterLocationsView> {
                     ),
                   )),
               context.verticalSizedBox(0.02),
+              //kullanıcıdan alınan bilgilere göre apiye istek atan ve diğer sayfaya götüren buton
               SizedBox(
                   height: context.dynamicHeight(0.055),
                   width: context.dynamicWidht(0.6),
@@ -66,16 +59,17 @@ class _FilterLocationsViewState extends State<FilterLocationsView> {
                     buttonText: findTxt,
                   )),
              context.verticalSizedBox(0.03),
+             //veri çekme işlemleri sırasında ekranda gösterilecek loading spinkit
             SizedBox(
                   height: context.dynamicHeight(0.04),
                   width: context.dynamicWidht(0.3),
                   child: context.watch<StateController>().loadingDatas == true
-                      ? FittedBox(
+                      ? const FittedBox(
                           child: SpinKitThreeBounce(
-                            color:Theme.of(context).brightness==Brightness.light? Colors.black:Colors.white,
+                            color:Colors.red
                           ),
                         )
-                      : SizedBox.shrink()),
+                      : const SizedBox.shrink()),
             ],
           ),
         ),
