@@ -28,9 +28,9 @@ extension ApiPathsExtension on ApiServiceConts {
       case ApiServiceConts.county:
         return 'contentType';
       case ApiServiceConts.authorizationToken:
-        return '7MYJESfPF3xQZwDIGDhKZNl2vSXjKHdn87feLF1VVlT9pLWp1LV6smmqMQrj';
+        return 'YOUR_API_KEY';
       case ApiServiceConts.apikey:
-        return '7MYJESfPF3xQZwDIGDhKZNl2vSXjKHdn87feLF1VVlT9pLWp1LV6smmqMQrj';
+        return 'YOUR_API_KEY';
     }
   }
 }
