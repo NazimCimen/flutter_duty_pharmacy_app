@@ -41,7 +41,7 @@ Thank you for reviewing my project! Don't forget to visit the [www.linkedin.com/
 
 This is an example of how to list things you need to use the software and how to install them.
 
-### 1. Cloning the Project
+  ### 1. CLONING THE PROJECT
 
 Follow these steps to clone the project to your local machine:
 
