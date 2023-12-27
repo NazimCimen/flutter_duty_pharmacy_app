@@ -1,3 +1,4 @@
+## DUTY PHARMACY APP WITH GOOGLE MAPS
 <br/>
 <p align="center">
   <a href="https://github.com/ShaanCoding/ReadME-Generator">
@@ -10,7 +11,7 @@
 
 I am pleased to introduce to you the Duty Pharmacy App that I developed using Flutter. This application is designed to make it easy for users to find pharmacies on duty throughout Turkey and the Turkish Republic of Northern Cyprus.
 
-## DUTY PHARMACY APP WITH GOOGLE MAPS
+
 
 ![Screen Shot](https://github.com/NazimCimen/flutter_duty_pharmacy_app/blob/main/assets/images/myapp.png)
 
