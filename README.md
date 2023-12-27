@@ -17,19 +17,19 @@ I am pleased to introduce to you the Duty Pharmacy App that I developed using Fl
 
 ## 🌟 Features
 
-- ** 🌐 Cross-Platform, One Application:** The application works seamlessly on iOS, Android, and Web platforms .🌟 responsive design.
+- 🌐 Cross-Platform, One Application: The application works seamlessly on iOS, Android, and Web platforms .🌟 responsive design.
 
-- ** 🗺️ Discover Pharmacies on the Map:** With Google Maps integration, you can view the locations of pharmacies on the map and choose the most convenient one.
+- 🗺️ Discover Pharmacies on the Map: With Google Maps integration, you can view the locations of pharmacies on the map and choose the most convenient one.
 
-- ** 📲 Personalized Experience:** After entering your city and district information, your preferences are remembered by the application, eliminating the need to enter the same information every time you open it.
+- 📲 Personalized Experience: After entering your city and district information, your preferences are remembered by the application, eliminating the need to enter the same information every time you open it.
 
 ## 🌐 Technologies Used
 
-- **Architecture:** I opted for the Model-View-Controller (MVC) architecture.
+- Architecture: I opted for the Model-View-Controller (MVC) architecture.
 
-- **State Management:** Provider was used.
+- State Management: Provider was used.
 
-- **HTTP Requests:** Dio package was used.
+- HTTP Requests: Dio package was used.
 
 
 
